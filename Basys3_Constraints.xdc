@@ -35,12 +35,12 @@ set_property IOSTANDARD LVCMOS33 [get_ports {sw[7]}]
 #set_property IOSTANDARD LVCMOS33 [get_ports {sw[11]}]
 #set_property PACKAGE_PIN W2 [get_ports {sw[12]}]
 #set_property IOSTANDARD LVCMOS33 [get_ports {sw[12]}]
-#set_property PACKAGE_PIN U1 [get_ports {sw[13]}]
-#set_property IOSTANDARD LVCMOS33 [get_ports {sw[13]}]
-#set_property PACKAGE_PIN T1 [get_ports sw14]
-#set_property IOSTANDARD LVCMOS33 [get_ports sw14]
-#set_property PACKAGE_PIN R2 [get_ports sw15]
-#set_property IOSTANDARD LVCMOS33 [get_ports sw15]
+set_property PACKAGE_PIN U1 [get_ports {baudset[0]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {baudset[0]}]
+set_property PACKAGE_PIN T1 [get_ports {baudset[1]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {baudset[1]}]
+set_property PACKAGE_PIN R2 [get_ports {baudset[2]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {baudset[2]}]
 
 
 ## LEDs
