@@ -11,7 +11,7 @@ module receiver (
     reg shift; 
     reg state, nextstate; 
     reg [3:0] bitcounter; 
-    reg [1:0] samplecounter; 
+    reg [10:0] samplecounter; 
     reg [20:0] counter; 
     reg [9:0] rxshiftreg; 
     reg clear_bitcounter, inc_bitcounter, inc_samplecounter, clear_samplecounter; 
