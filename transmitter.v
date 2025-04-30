@@ -5,6 +5,7 @@ module transmitter(
 input clk, 
 input reset, 
 input transmit, 
+input[2:0] baudset,
 input [7:0] data, 
 output reg TxD 
     );
@@ -18,6 +19,28 @@ reg shift;
 reg load; 
 reg clear; 
 
+reg [19:0]k;
+
+
+
+    parameter b1=20'd10415;
+    parameter b2= 20'd5207;
+    parameter b3= 20'd867;
+    always@(*)
+    begin
+  case(baudset)
+   
+  3'b001: k<=b1;
+  3'b010: k<=b2;
+  3'b100: k<=b3;
+  default:  k<=b1;
+  endcase
+  end
+
+
+
+
+
 always @ (posedge clk) 
 begin 
     if (reset) 
@@ -28,7 +51,7 @@ begin
        end
     else begin
          counter <= counter + 1; //counter for baud rate generator start counting 
-            if (counter >= 10415) //if count to 10416 (from 0 to 10415)
+            if (counter >= k) //if count to 10416 (from 0 to 10415 or 5201 or 867)
                begin 
                   state <= nextstate; 
                   counter <=0; 
